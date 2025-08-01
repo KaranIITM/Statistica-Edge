@@ -8,11 +8,11 @@ Original file is located at
 """
 
 # Install required packages
-pip install streamlit
-pip install seaborn
-pip install plotly
-pip install scipy
-npm install localtunnel
+# pip install streamlit
+# pip install seaborn
+# pip install plotly
+# pip install scipy
+# npm install localtunnel
 
 # Save this as 'statistics_app.py'
 import streamlit as st
