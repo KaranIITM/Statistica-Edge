@@ -7,12 +7,12 @@ Original file is located at
     https://colab.research.google.com/drive/1dXKlxA49KN11urPw60ECmFUi3ys8othS
 """
 
-# Install required packages
-!pip install streamlit
-!pip install seaborn
-!pip install plotly
-!pip install scipy
-!npm install localtunnel
+# # Install required packages
+# !pip install streamlit
+# !pip install seaborn
+# !pip install plotly
+# !pip install scipy
+# !npm install localtunnel
 
 # Save this as 'statistics_app.py'
 import streamlit as st
