@@ -23,7 +23,7 @@ warnings.filterwarnings('ignore')  # Suppress warning messages for cleaner outpu
 # Configure Streamlit page settings for better user experience
 st.set_page_config(
     page_title="Statistics Visualization Hub",
-    page_icon="📊",
+    page_icon="",
     layout="wide",  # Use full width of browser
     initial_sidebar_state="expanded"  # Show sidebar by default
 )
@@ -217,18 +217,18 @@ def create_navigation_buttons():
     between different sections of the application.
     """
     sections = [
-        ("📈 Descriptive Statistics", "descriptive"),
-        ("🔍 Data Types Explorer", "data_types"),
-        ("📐 Central Tendency", "central_tendency"),
-        ("📏 Dispersion Measures", "dispersion"),
-        ("📊 Univariate Analysis", "univariate"),
-        ("🔗 Bivariate Analysis", "bivariate"),
-        ("📈 Quantiles & Percentiles", "quantiles"),
-        ("📚 Statistical Terminology", "terminology"),
-        ("💬 Feedback", "feedback")
+        (" Descriptive Statistics", "descriptive"),
+        (" Data Types Explorer", "data_types"),
+        (" Central Tendency", "central_tendency"),
+        (" Dispersion Measures", "dispersion"),
+        (" Univariate Analysis", "univariate"),
+        (" Bivariate Analysis", "bivariate"),
+        (" Quantiles & Percentiles", "quantiles"),
+        (" Statistical Terminology", "terminology"),
+        (" Feedback", "feedback")
     ]
 
-    st.markdown("### 🎯 Choose Your Learning Journey")
+    st.markdown("###  Choose Your Learning Journey")
 
     # Create a grid layout for navigation buttons
     for i in range(0, len(sections), 3):
@@ -287,7 +287,7 @@ def show_home_page():
     # Welcome message with platform description
     st.markdown("""
     <div class="highlight-box">
-        <h2>🚀 Welcome to the Interactive Statistics Learning Platform</h2>
+        <h2> Welcome to the Interactive Statistics Learning Platform</h2>
         <p>Discover the power of statistics through real-world examples and interactive visualizations.
         Statistics drives billions of dollars in business decisions and shapes critical research worldwide.</p>
     </div>
@@ -297,14 +297,14 @@ def show_home_page():
     create_navigation_buttons()
 
     # Showcase real-world impact of statistics with concrete examples
-    st.markdown("## 💰 Statistics in Action: Real-World Impact")
+    st.markdown("##  Statistics in Action: Real-World Impact")
 
     # Create four columns to display different industry applications
     col1, col2, col3, col4 = st.columns(4)
 
     with col1:
         st.markdown("""
-        **💰 Business Intelligence**
+        ** Business Intelligence**
         - **$35B+** - Amazon's recommendation revenue annually
         - **10-20 hours** saved daily by HelloFresh through analytics
         - **Marketing ROI** improvements generating millions in revenue
@@ -313,7 +313,7 @@ def show_home_page():
 
     with col2:
         st.markdown("""
-        **🏥 Healthcare Revolution**
+        ** Healthcare Revolution**
         - **$200B+** - Annual pharmaceutical research budget
         - **Clinical trials** save millions of lives worldwide
         - **COVID-19 modeling** influenced trillion-dollar policies
@@ -322,7 +322,7 @@ def show_home_page():
 
     with col3:
         st.markdown("""
-        **📊 Financial Markets**
+        ** Financial Markets**
         - **$100T+** - Global assets managed using statistical models
         - **$6T+** - Insurance premiums based on risk statistics
         - **High-frequency trading** generates billions through algorithms
@@ -331,7 +331,7 @@ def show_home_page():
 
     with col4:
         st.markdown("""
-        **🏆 Sports Analytics**
+        ** Sports Analytics**
         - **Multi-billion** dollar sports analytics industry
         - **Player performance** optimization saves teams millions
         - **Draft strategies** based on statistical player analysis
@@ -343,13 +343,13 @@ def show_home_page():
     col1, col2, col3, col4 = st.columns(4)
 
     with col1:
-        st.metric("📊 Datasets", "6+", delta="Real-world data")
+        st.metric(" Datasets", "6+", delta="Real-world data")
     with col2:
-        st.metric("📈 Visualizations", "25+", delta="Interactive plots")
+        st.metric(" Visualizations", "25+", delta="Interactive plots")
     with col3:
-        st.metric("🧮 Statistical Measures", "20+", delta="Key concepts")
+        st.metric(" Statistical Measures", "20+", delta="Key concepts")
     with col4:
-        st.metric("🎯 Learning Sections", "9", delta="Comprehensive coverage")
+        st.metric(" Learning Sections", "9", delta="Comprehensive coverage")
 
 def show_central_tendency():
     """
@@ -358,15 +358,15 @@ def show_central_tendency():
     This section teaches mean, median, and mode concepts with real-world applications,
     but excludes mode calculation and plotting as requested.
     """
-    st.markdown('<h1 class="main-header">📐 Measures of Central Tendency</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-header"> Measures of Central Tendency</h1>', unsafe_allow_html=True)
 
     # Back button for navigation
-    if st.button("🏠 Back to Home", key="back_central"):
+    if st.button(" Back to Home", key="back_central"):
         st.session_state.current_section = 'home'
         st.rerun()
 
     # Interactive controls in sidebar for parameter adjustment
-    st.sidebar.subheader("🎛️ Interactive Controls")
+    st.sidebar.subheader(" Interactive Controls")
     distribution_type = st.sidebar.selectbox("Choose distribution type:",
                                            ["Normal", "Right Skewed", "Left Skewed", "Bimodal", "Uniform"])
     sample_size = st.sidebar.slider("Sample size:", 100, 2000, 500)
@@ -402,14 +402,14 @@ def show_central_tendency():
     st.markdown(f"**Distribution Type:** {distribution_type} - {description}")
 
     # Display measures with comprehensive explanations
-    st.markdown("## 📊 Central Tendency Measures")
+    st.markdown("##  Central Tendency Measures")
 
     col1, col2, col3 = st.columns(3)
 
     # Mean explanation with business context
     with col1:
         st.markdown(f"""
-        **📊 Mean (Average): {mean_val:.2f}**
+        ** Mean (Average): {mean_val:.2f}**
 
         **Formula:** μ = Σx / n
 
@@ -428,7 +428,7 @@ def show_central_tendency():
     # Median explanation with business context
     with col2:
         st.markdown(f"""
-        **🎯 Median (Middle Value): {median_val:.2f}**
+        ** Median (Middle Value): {median_val:.2f}**
 
         **Formula:** Middle value when data is sorted
 
@@ -447,7 +447,7 @@ def show_central_tendency():
     # Mode explanation without calculation (as requested)
     with col3:
         st.markdown(f"""
-        **🔄 Mode (Most Common)**
+        ** Mode (Most Common)**
 
         **Formula:** Most frequently occurring value
 
@@ -491,7 +491,7 @@ def show_central_tendency():
     st.pyplot(fig)
 
     # Interpretation guide for understanding results
-    st.markdown("## 🔍 Interpretation Guide")
+    st.markdown("## Interpretation Guide")
 
     skewness = stats.skew(data)
     if abs(skewness) < 0.5:
@@ -518,10 +518,10 @@ def show_data_types():
     This section covers all major data types including ordinal, nominal,
     discrete, continuous, observational, and experimental data.
     """
-    st.markdown('<h1 class="main-header">🔍 Data Types Explorer</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-header"> Data Types Explorer</h1>', unsafe_allow_html=True)
 
     # Back button for navigation
-    if st.button("🏠 Back to Home", key="back_data_types"):
+    if st.button(" Back to Home", key="back_data_types"):
         st.session_state.current_section = 'home'
         st.rerun()
 
@@ -533,17 +533,17 @@ def show_data_types():
 
     # Enhanced data type tabs with comprehensive coverage
     tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
-        "📊 Quantitative Data",
-        "📝 Qualitative Data",
-        "🔢 Discrete vs Continuous",
-        "📋 Nominal vs Ordinal",
-        "🔬 Observational vs Experimental",
-        "⏰ Time Series"
+        " Quantitative Data",
+        " Qualitative Data",
+        " Discrete vs Continuous",
+        " Nominal vs Ordinal",
+        " Observational vs Experimental",
+        " Time Series"
     ])
 
     # Quantitative data explanation with examples
     with tab1:
-        st.subheader("📊 Quantitative Data (Numerical)")
+        st.subheader(" Quantitative Data (Numerical)")
 
         st.markdown("""
         **Definition:** Data that represents quantities and can be measured numerically.
@@ -584,7 +584,7 @@ def show_data_types():
 
     # Qualitative data explanation with examples
     with tab2:
-        st.subheader("📝 Qualitative Data (Categorical)")
+        st.subheader(" Qualitative Data (Categorical)")
 
         st.markdown("""
         **Definition:** Data that represents categories, groups, or characteristics that cannot be measured numerically.
@@ -630,7 +630,7 @@ def show_data_types():
 
     # Discrete vs Continuous data comparison
     with tab3:
-        st.subheader("🔢 Discrete vs Continuous Data")
+        st.subheader(" Discrete vs Continuous Data")
 
         col1, col2 = st.columns(2)
 
@@ -688,7 +688,7 @@ def show_data_types():
 
     # Nominal vs Ordinal data comparison
     with tab4:
-        st.subheader("📋 Nominal vs Ordinal Data")
+        st.subheader(" Nominal vs Ordinal Data")
 
         col1, col2 = st.columns(2)
 
@@ -751,7 +751,7 @@ def show_data_types():
 
     # Observational vs Experimental data comparison
     with tab5:
-        st.subheader("🔬 Observational vs Experimental Data")
+        st.subheader(" Observational vs Experimental Data")
 
         col1, col2 = st.columns(2)
 
@@ -778,15 +778,15 @@ def show_data_types():
             - Traffic flow studies
 
             **Advantages:**
-            - ✅ Ethical (no manipulation)
-            - ✅ Real-world applicability
-            - ✅ Large sample sizes possible
-            - ✅ Cost-effective
+            -  Ethical (no manipulation)
+            -  Real-world applicability
+            -  Large sample sizes possible
+            -  Cost-effective
 
             **Disadvantages:**
-            - ❌ Cannot prove causation
-            - ❌ Confounding variables
-            - ❌ Less control over conditions
+            -  Cannot prove causation
+            -  Confounding variables
+            -  Less control over conditions
             """)
 
         # Experimental data explanation
@@ -812,20 +812,20 @@ def show_data_types():
             - Laboratory experiments
 
             **Advantages:**
-            - ✅ Can establish causation
-            - ✅ High internal validity
-            - ✅ Control over variables
-            - ✅ Reproducible results
+            -  Can establish causation
+            -  High internal validity
+            -  Control over variables
+            -  Reproducible results
 
             **Disadvantages:**
-            - ❌ May be unethical
-            - ❌ Artificial conditions
-            - ❌ Expensive and time-consuming
-            - ❌ Limited sample sizes
+            -  May be unethical
+            -  Artificial conditions
+            -  Expensive and time-consuming
+            -  Limited sample sizes
             """)
 
         # Comparison table for better understanding
-        st.markdown("### 📊 Key Differences Summary")
+        st.markdown("###  Key Differences Summary")
 
         comparison_data = {
             'Aspect': ['Control over variables', 'Causation', 'Cost', 'Ethics', 'Real-world applicability'],
@@ -838,7 +838,7 @@ def show_data_types():
 
     # Time series data explanation and visualization
     with tab6:
-        st.subheader("⏰ Time Series Data")
+        st.subheader(" Time Series Data")
 
         st.markdown("""
         **Definition:** Data points collected or recorded at successive time intervals.
@@ -921,7 +921,7 @@ def show_data_types():
             st.pyplot(fig)
 
         # Time series components explanation
-        st.markdown("### 📈 Time Series Components")
+        st.markdown("###  Time Series Components")
 
         components_info = {
             'Component': ['Trend', 'Seasonality', 'Cyclical', 'Irregular (Noise)'],
@@ -949,10 +949,10 @@ def show_univariate_analysis():
     This section provides various visualization options for both numerical
     and categorical variables with detailed analysis capabilities.
     """
-    st.markdown('<h1 class="main-header">📊 Univariate Analysis</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-header"> Univariate Analysis</h1>', unsafe_allow_html=True)
 
     # Back button for navigation
-    if st.button("🏠 Back to Home", key="back_univariate"):
+    if st.button(" Back to Home", key="back_univariate"):
         st.session_state.current_section = 'home'
         st.rerun()
 
@@ -1065,7 +1065,7 @@ def show_univariate_analysis():
         st.pyplot(fig)
 
         # Enhanced distribution analysis with multiple statistical measures
-        st.subheader("📈 Distribution Analysis")
+        st.subheader(" Distribution Analysis")
 
         stats_dict = calculate_statistics(data)
         if stats_dict:
@@ -1088,18 +1088,18 @@ def show_univariate_analysis():
             with col2:
                 st.metric("Kurtosis", f"{kurtosis:.3f}")
                 if kurtosis > 0:
-                    st.write("📈 Heavy-tailed")
+                    st.write(" Heavy-tailed")
                 else:
-                    st.write("📉 Light-tailed")
+                    st.write(" Light-tailed")
 
             # Normality test results
             with col3:
                 _, p_value = stats.normaltest(data)
                 st.metric("Normality p-value", f"{p_value:.4f}")
                 if p_value > 0.05:
-                    st.write("✅ Likely normal")
+                    st.write(" Likely normal")
                 else:
-                    st.write("❌ Not normal")
+                    st.write(" Not normal")
 
             # Outlier detection using IQR method
             with col4:
@@ -1153,7 +1153,7 @@ def show_univariate_analysis():
         st.pyplot(fig)
 
         # Categorical analysis with summary statistics
-        st.subheader("📊 Categorical Analysis")
+        st.subheader(" Categorical Analysis")
 
         col1, col2 = st.columns(2)
 
@@ -1180,10 +1180,10 @@ def show_bivariate_analysis():
     This section handles numerical-numerical, categorical-numerical, and
     categorical-categorical relationships with appropriate visualizations and tests.
     """
-    st.markdown('<h1 class="main-header">🔗 Bivariate Analysis</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-header"> Bivariate Analysis</h1>', unsafe_allow_html=True)
 
     # Back button for navigation
-    if st.button("🏠 Back to Home", key="back_bivariate"):
+    if st.button(" Back to Home", key="back_bivariate"):
         st.session_state.current_section = 'home'
         st.rerun()
 
@@ -1215,7 +1215,7 @@ def show_bivariate_analysis():
 
     # Numerical vs Numerical analysis
     if analysis_type == "Numerical vs Numerical" and len(numeric_cols) >= 2:
-        st.subheader("📊 Numerical vs Numerical Analysis")
+        st.subheader(" Numerical vs Numerical Analysis")
 
         st.markdown("""
         **What it means:** Analyzing the relationship between two continuous variables to understand
@@ -1292,7 +1292,7 @@ def show_bivariate_analysis():
 
                 with col3:
                     direction = "Positive" if correlation > 0 else "Negative"
-                    st.write(f"📈 {direction} relationship")
+                    st.write(f" {direction} relationship")
 
                 # Detailed interpretation for understanding
                 st.markdown("### 🔍 Interpretation:")
@@ -1314,7 +1314,7 @@ def show_bivariate_analysis():
 
     # Categorical vs Numerical analysis
     elif analysis_type == "Categorical vs Numerical":
-        st.subheader("📊 Categorical vs Numerical Analysis")
+        st.subheader(" Categorical vs Numerical Analysis")
 
         st.markdown("""
         **What it means:** Comparing numerical values across different categories to understand
@@ -1374,7 +1374,7 @@ def show_bivariate_analysis():
 
                     # Group statistics for detailed comparison
                     group_stats = clean_data.groupby(cat_var)[num_var].agg(['count', 'mean', 'std', 'min', 'max']).round(3)
-                    st.subheader("📊 Group Statistics")
+                    st.subheader(" Group Statistics")
                     st.dataframe(group_stats)
 
                     # Statistical significance testing
@@ -1389,7 +1389,7 @@ def show_bivariate_analysis():
                             statistic, p_value = stats.f_oneway(*groups)
                             test_name = "ANOVA"
 
-                        st.subheader(f"📈 Statistical Test ({test_name})")
+                        st.subheader(f" Statistical Test ({test_name})")
                         col1, col2 = st.columns(2)
 
                         with col1:
@@ -1399,16 +1399,16 @@ def show_bivariate_analysis():
 
                         # Interpretation of statistical significance
                         if p_value < 0.05:
-                            st.write("✅ **Significant difference** between groups (p < 0.05)")
+                            st.write(" **Significant difference** between groups (p < 0.05)")
                         else:
-                            st.write("❌ **No significant difference** between groups (p ≥ 0.05)")
+                            st.write(" **No significant difference** between groups (p ≥ 0.05)")
 
             except Exception as e:
                 st.error(f"Error creating visualization: {str(e)}")
 
     # Categorical vs Categorical analysis
     elif analysis_type == "Categorical vs Categorical":
-        st.subheader("📊 Categorical vs Categorical Analysis")
+        st.subheader(" Categorical vs Categorical Analysis")
 
         st.markdown("""
         **What it means:** Examining the relationship between two categorical variables to understand
@@ -1434,7 +1434,7 @@ def show_bivariate_analysis():
                 if len(clean_data) > 0:
                     crosstab = pd.crosstab(clean_data[cat_var1], clean_data[cat_var2])
 
-                    st.subheader("📋 Cross-tabulation Table")
+                    st.subheader(" Cross-tabulation Table")
                     st.dataframe(crosstab)
 
                     # Enhanced visualizations for categorical relationships
@@ -1468,7 +1468,7 @@ def show_bivariate_analysis():
                     if crosstab.shape[0] > 1 and crosstab.shape[1] > 1:
                         chi2, p_value, dof, expected = stats.chi2_contingency(crosstab)
 
-                        st.subheader("📈 Chi-Square Test for Independence")
+                        st.subheader(" Chi-Square Test for Independence")
 
                         col1, col2, col3 = st.columns(3)
 
@@ -1481,10 +1481,10 @@ def show_bivariate_analysis():
 
                         # Statistical significance interpretation
                         if p_value < 0.05:
-                            st.write("✅ **Significant association** between variables (p < 0.05)")
+                            st.write(" **Significant association** between variables (p < 0.05)")
                             st.write("The two variables are not independent.")
                         else:
-                            st.write("❌ **No significant association** between variables (p ≥ 0.05)")
+                            st.write(" **No significant association** between variables (p ≥ 0.05)")
                             st.write("The two variables appear to be independent.")
 
                         # Effect size calculation (Cramér's V)
@@ -1514,10 +1514,10 @@ def show_quantiles():
     This section covers quartiles, deciles, quintiles, and percentiles with
     real-world applications and interactive calculations.
     """
-    st.markdown('<h1 class="main-header">📈 Quantiles & Percentiles</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-header"> Quantiles & Percentiles</h1>', unsafe_allow_html=True)
 
     # Back button for navigation
-    if st.button("🏠 Back to Home", key="back_quantiles"):
+    if st.button(" Back to Home", key="back_quantiles"):
         st.session_state.current_section = 'home'
         st.rerun()
 
@@ -1548,13 +1548,13 @@ def show_quantiles():
     quintiles = [np.percentile(data, q) for q in [20, 40, 60, 80]]
 
     # Enhanced quantile information with formulas and applications
-    st.markdown("## 📊 Quantile Types and Formulas")
+    st.markdown("##  Quantile Types and Formulas")
 
-    quantile_tabs = st.tabs(["📊 Quartiles", "🔟 Deciles", "🎯 Quintiles", "📈 Percentiles"])
+    quantile_tabs = st.tabs([" Quartiles", " Deciles", " Quintiles", " Percentiles"])
 
     # Quartiles explanation and visualization
     with quantile_tabs[0]:
-        st.subheader("📊 Quartiles")
+        st.subheader(" Quartiles")
 
         st.markdown("""
         **Definition:** Quartiles divide data into four equal parts. Each part contains 25% of the data.
@@ -1604,7 +1604,7 @@ def show_quantiles():
 
     # Deciles explanation and visualization
     with quantile_tabs[1]:
-        st.subheader("🔟 Deciles")
+        st.subheader(" Deciles")
 
         st.markdown("""
         **Definition:** Deciles divide data into ten equal parts. Each part contains 10% of the data.
@@ -1650,7 +1650,7 @@ def show_quantiles():
 
     # Quintiles explanation and visualization
     with quantile_tabs[2]:
-        st.subheader("🎯 Quintiles")
+        st.subheader(" Quintiles")
 
         st.markdown("""
         **Definition:** Quintiles divide data into five equal parts. Each part contains 20% of the data.
@@ -1696,7 +1696,7 @@ def show_quantiles():
 
     # Percentiles explanation and interactive calculator
     with quantile_tabs[3]:
-        st.subheader("📈 Percentiles")
+        st.subheader(" Percentiles")
 
         st.markdown("""
         **Definition:** Percentiles divide data into 100 equal parts. The kth percentile is the value below which k% of data falls.
@@ -1709,7 +1709,7 @@ def show_quantiles():
         """)
 
         # Interactive percentile calculator
-        st.subheader("🧮 Interactive Percentile Calculator")
+        st.subheader(" Interactive Percentile Calculator")
 
         col1, col2 = st.columns(2)
 
@@ -1743,7 +1743,7 @@ def show_quantiles():
             st.pyplot(fig)
 
     # Real-world applications summary
-    st.markdown("## 🎯 Real-World Applications Summary")
+    st.markdown("##  Real-World Applications Summary")
 
     # Comprehensive applications across different sectors
     applications = {
@@ -1771,11 +1771,11 @@ def show_quantiles():
 
     # Display applications in expandable sections
     for sector, info in applications.items():
-        with st.expander(f"🏢 {sector}"):
+        with st.expander(f" {sector}"):
             for measure, description in info.items():
                 if measure != "Impact":
                     st.write(f"**{measure}:** {description}")
-            st.write(f"**💼 Business Impact:** {info['Impact']}")
+            st.write(f"** Business Impact:** {info['Impact']}")
 
 def show_terminology():
     """
@@ -1784,10 +1784,10 @@ def show_terminology():
     This section includes both descriptive and inferential statistics terms
     with plot explanations and advanced statistical concepts.
     """
-    st.markdown('<h1 class="main-header">📚 Statistical Terminology</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-header"> Statistical Terminology</h1>', unsafe_allow_html=True)
 
     # Back button for navigation
-    if st.button("🏠 Back to Home", key="back_terminology"):
+    if st.button(" Back to Home", key="back_terminology"):
         st.session_state.current_section = 'home'
         st.rerun()
 
@@ -1798,7 +1798,7 @@ def show_terminology():
     """)
 
     # Plot explanations section with comprehensive coverage
-    st.markdown("## 📊 Plot Types and Their Meanings")
+    st.markdown("##  Plot Types and Their Meanings")
 
     plot_explanations = {
         "Histogram": {
@@ -1865,7 +1865,7 @@ def show_terminology():
 
     # Display plot explanations in expandable format
     for plot_name, info in plot_explanations.items():
-        with st.expander(f"📊 {plot_name}"):
+        with st.expander(f" {plot_name}"):
             st.markdown(f"""
             **Meaning:** {info['meaning']}
 
@@ -1878,7 +1878,7 @@ def show_terminology():
 
     # Comprehensive statistical terms organized by category
     terminology_categories = {
-        "📊 Descriptive Statistics": {
+        " Descriptive Statistics": {
             "Mean (Average)": {
                 "formula": "μ = Σx / n",
                 "definition": "The sum of all values divided by the number of values. Most common measure of central tendency.",
@@ -1928,7 +1928,7 @@ def show_terminology():
                 "example": "Stock A: Mean=$50, SD=$5, CV=10%. Stock B: Mean=$100, SD=$8, CV=8%"
             }
         },
-        "📈 Distribution Properties": {
+        " Distribution Properties": {
             "Skewness": {
                 "formula": "Skewness = E[(X-μ)³] / σ³",
                 "definition": "Measures the asymmetry of a distribution. Indicates which tail is longer.",
@@ -1954,7 +1954,7 @@ def show_terminology():
                 "example": "Z-score of 1.5 means 1.5 standard deviations above average."
             }
         },
-        "📊 Percentiles & Quantiles": {
+        " Percentiles & Quantiles": {
             "Percentile": {
                 "formula": "Pk = value below which k% of data falls",
                 "definition": "Values that divide data into 100 equal parts. The kth percentile has k% of data below it.",
@@ -1980,7 +1980,7 @@ def show_terminology():
                 "example": "Used in investment risk categories, income brackets"
             }
         },
-        "🔗 Correlation & Relationships": {
+        " Correlation & Relationships": {
             "Correlation Coefficient": {
                 "formula": "r = Σ[(xi-x̄)(yi-ȳ)] / √[Σ(xi-x̄)²Σ(yi-ȳ)²]",
                 "definition": "Measures the strength and direction of linear relationship between two variables (-1 to +1).",
@@ -2000,7 +2000,7 @@ def show_terminology():
                 "example": "Positive covariance: both increase together. Negative: one increases as other decreases."
             }
         },
-        "📏 Sampling & Inference": {
+        " Sampling & Inference": {
             "Population": {
                 "formula": "N = total population size",
                 "definition": "The entire group of individuals or items that we want to study or draw conclusions about.",
@@ -2038,7 +2038,7 @@ def show_terminology():
                 "example": "Smaller standard error = more precise estimate"
             }
         },
-        "🧪 Hypothesis Testing & Inferential Statistics": {
+        " Hypothesis Testing & Inferential Statistics": {
             "Null Hypothesis (H₀)": {
                 "formula": "H₀: parameter = specified value",
                 "definition": "A statement of no effect or no difference. Assumes status quo until proven otherwise.",
@@ -2100,7 +2100,7 @@ def show_terminology():
     for category, terms in terminology_categories.items():
         with st.expander(f"{category} ({len(terms)} terms)"):
             for term, info in terms.items():
-                st.markdown(f"### 📖 {term}")
+                st.markdown(f"###  {term}")
 
                 col1, col2 = st.columns(2)
 
@@ -2121,7 +2121,7 @@ def show_terminology():
                 st.markdown("---")
 
     # Quick reference search functionality
-    st.markdown("## 🔍 Quick Term Search")
+    st.markdown("##  Quick Term Search")
 
     search_term = st.text_input("Search for a statistical term:", placeholder="e.g., mean, correlation, p-value")
 
@@ -2151,7 +2151,7 @@ def show_terminology():
             st.write("No terms found. Try different keywords.")
 
     # Statistical symbols reference for comprehensive coverage
-    st.markdown("## 🔣 Common Statistical Symbols")
+    st.markdown("##  Common Statistical Symbols")
 
     symbols = {
         "Greek Letters": {
@@ -2200,10 +2200,10 @@ def show_dispersion():
     This section covers standard deviation, variance, range, IQR, and coefficient
     of variation with business context and visualizations.
     """
-    st.markdown('<h1 class="main-header">📏 Measures of Dispersion</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-header">� Measures of Dispersion</h1>', unsafe_allow_html=True)
 
     # Back button for navigation
-    if st.button("🏠 Back to Home", key="back_dispersion"):
+    if st.button(" Back to Home", key="back_dispersion"):
         st.session_state.current_section = 'home'
         st.rerun()
 
@@ -2217,7 +2217,7 @@ def show_dispersion():
     selected_columns = st.multiselect("Select columns to compare:", numeric_cols, default=numeric_cols[:2])
 
     if selected_columns:
-        st.subheader("📊 Dispersion Comparison")
+        st.subheader(" Dispersion Comparison")
 
         # Calculate dispersion measures for selected columns
         dispersion_data = []
@@ -2263,13 +2263,13 @@ def show_dispersion():
             st.pyplot(fig)
 
     # Industry applications with comprehensive explanations
-    st.markdown("## 🏭 Industry Applications")
+    st.markdown("##  Industry Applications")
 
     col1, col2, col3 = st.columns(3)
 
     with col1:
         st.markdown("""
-        **🏭 Manufacturing Quality Control**
+        ** Manufacturing Quality Control**
         - **Standard Deviation:** Monitor consistency in production
         - **Six Sigma:** Requires products within ±3 standard deviations
         - **Range:** Set acceptable quality limits
@@ -2278,7 +2278,7 @@ def show_dispersion():
 
     with col2:
         st.markdown("""
-        **📈 Investment Risk Management**
+        ** Investment Risk Management**
         - **Standard Deviation:** Measure portfolio volatility
         - **Variance:** Calculate risk-adjusted returns
         - **CV:** Compare assets with different price ranges
@@ -2287,7 +2287,7 @@ def show_dispersion():
 
     with col3:
         st.markdown("""
-        **🚚 Supply Chain Management**
+        ** Supply Chain Management**
         - **Range:** Plan for delivery time variations
         - **IQR:** Set realistic service level agreements
         - **Standard Deviation:** Buffer inventory planning
@@ -2301,10 +2301,10 @@ def show_descriptive_stats():
     This section provides a general overview of descriptive statistics with
     dataset exploration and basic statistical calculations.
     """
-    st.markdown('<h1 class="main-header">📈 Descriptive Statistics Overview</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-header"> Descriptive Statistics Overview</h1>', unsafe_allow_html=True)
 
     # Back button for navigation
-    if st.button("🏠 Back to Home", key="back_descriptive"):
+    if st.button(" Back to Home", key="back_descriptive"):
         st.session_state.current_section = 'home'
         st.rerun()
 
@@ -2339,7 +2339,7 @@ def show_descriptive_stats():
 
                 if stats_dict:
                     # Display comprehensive statistics
-                    st.subheader("📊 Descriptive Statistics")
+                    st.subheader(" Descriptive Statistics")
 
                     col1, col2, col3, col4 = st.columns(4)
                     with col1:
@@ -2356,7 +2356,7 @@ def show_descriptive_stats():
                         st.metric("Q3", f"{stats_dict['q3']:.2f}")
 
                     # Comprehensive visualizations
-                    st.subheader("📈 Visualizations")
+                    st.subheader(" Visualizations")
 
                     # Create tabs for different visualization types
                     tab1, tab2, tab3, tab4 = st.tabs(["Histogram", "Box Plot", "Distribution", "Summary"])
@@ -2397,10 +2397,10 @@ def show_feedback_form():
     This section provides a minimal feedback interface as requested,
     with direct email contact for suggestions and improvements.
     """
-    st.markdown('<h1 class="main-header">💬 Feedback & Suggestions</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-header"> Feedback & Suggestions</h1>', unsafe_allow_html=True)
 
     # Back button for navigation
-    if st.button("🏠 Back to Home", key="back_feedback"):
+    if st.button(" Back to Home", key="back_feedback"):
         st.session_state.current_section = 'home'
         st.rerun()
 
