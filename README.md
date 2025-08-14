@@ -1,13 +1,13 @@
 
 # Statistics Visualisation Tool
 
-[![Streamlit App](https://img.shields.io/badge/Streamlit-Live%20App-green)](https://statistics-visualisation-tool-004.streamlit.app)
+[![Streamlit App](https://img.shields.io/badge/Streamlit-Live%20App-green)](https://statistics-visualisation-tool-006.streamlit.app)
 
 Welcome to the **Statistics Visualisation Tool** — a lightweight and interactive web application built using [Streamlit](https://streamlit.io/) that makes statistical data exploration easier and more intuitive. Whether you're a student, data analyst, or just curious about statistics, this tool helps you visualize and understand data with ease.
 
 ##  Try it Live
 
- [Launch the App](https://statistics-visualisation-tool-004.streamlit.app)
+ [Launch the App](https://statistics-visualisation-tool-006.streamlit.app)
 
 ---
 
@@ -32,7 +32,7 @@ Welcome to the **Statistics Visualisation Tool** — a lightweight and interacti
 
 ##  How to Use
 
-1. Go to the [live app](https://statistics-visualisation-tool-004.streamlit.app)
+1. Go to the [live app](https://statistics-visualisation-tool-006.streamlit.app)
 2. Select the features you want to visualize
 3. Get instant plots and statistical summaries
 
